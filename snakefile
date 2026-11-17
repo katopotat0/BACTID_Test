@@ -11,8 +11,8 @@ rule all:
 
 rule fastqc:
     input:
-        read1 = "/mnt/cluster_storage/data/ref/bact_samples/raw_reads/{sample}_1.fastq.gz",
-        read2 = "/mnt/cluster_storage/data/ref/bact_samples/raw_reads/{sample}_2.fastq.gz"
+        read1 = "/mnt/cluster_storage/data/ref/bact_samples/{sample}_1.fastq.gz",
+        read2 = "/mnt/cluster_storage/data/ref/bact_samples/{sample}_2.fastq.gz"
     output:
         html_1 = "results/qc/{sample}_1_fastqc.html",
         zip_1  = "results/qc/{sample}_1_fastqc.zip",
@@ -28,8 +28,8 @@ rule fastqc:
 
 rule fastp:
     input:
-        read1 = "/mnt/cluster_storage/data/ref/bact_samples/raw_reads/{sample}_1.fastq.gz",
-        read2 = "/mnt/cluster_storage/data/ref/bact_samples/raw_reads/{sample}_2.fastq.gz"
+        read1 = "/mnt/cluster_storage/data/ref/bact_samples/{sample}_1.fastq.gz",
+        read2 = "/mnt/cluster_storage/data/ref/bact_samples/{sample}_2.fastq.gz"
     output:
         trimmed1   = "results/trimmed/{sample}_1.trim.fastq.gz",
         trimmed2   = "results/trimmed/{sample}_2.trim.fastq.gz",
